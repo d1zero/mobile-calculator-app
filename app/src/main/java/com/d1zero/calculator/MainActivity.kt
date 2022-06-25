@@ -97,6 +97,9 @@ class MainActivity : AppCompatActivity() {
                 val prevDigit = passedList[i - 1] as Float
                 val nextDigit = passedList[i + 1] as Float
                 when (operator) {
+                    '^' -> {
+                        newList.add(prevDigit.pow(nextDigit))
+                    }
                     '*' -> {
                         newList.add(prevDigit * nextDigit)
                         restartIndex = i + 1
@@ -104,9 +107,6 @@ class MainActivity : AppCompatActivity() {
                     '/' -> {
                         newList.add(prevDigit / nextDigit)
                         restartIndex = i + 1
-                    }
-                    '^' -> {
-                        newList.add(prevDigit.pow(nextDigit))
                     }
                     else -> {
                         newList.add(prevDigit)
